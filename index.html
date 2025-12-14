@@ -1,0 +1,2918 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>شركة البرق الأول المتجدد - استيراد وسائل النقل ومستلزماتها</title>
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet"></noscript>
+
+    <style>
+        /* ==================== RESET & BASE ==================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #0066CC;
+            --primary-dark: #003D7A;
+            --secondary-blue: #0080FF;
+            --accent-silver: #C0C0C0;
+            --dark-bg: #0A1628;
+            --light-bg: #F0F4F8;
+            --text-dark: #1A2332;
+            --text-light: #5A6C7D;
+            --white: #FFFFFF;
+            --gradient-blue: linear-gradient(135deg, #0066CC 0%, #0080FF 100%);
+            --gradient-silver: linear-gradient(135deg, #C0C0C0 0%, #E8E8E8 100%);
+            --gradient-dark: linear-gradient(135deg, #0A1628 0%, #1A2332 100%);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            height: 100%;
+            height: -webkit-fill-available;
+        }
+
+        body {
+            font-family: 'Cairo', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--white);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            line-height: 1.8;
+            min-height: 100vh;
+            min-height: -webkit-fill-available;
+        }
+
+        /* ==================== LOADER ==================== */
+        .loader {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            background: var(--gradient-blue) !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+            z-index: 9999 !important;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-content {
+            text-align: center;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .loader-logo {
+            margin-bottom: 40px;
+            animation: scaleRotate 2s ease-in-out infinite;
+        }
+
+        .loader-logo img {
+            height: 160px;
+            width: auto;
+            filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.4));
+        }
+
+        @keyframes scaleRotate {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(5deg); }
+        }
+
+        .loader-spinner {
+            width: 80px;
+            height: 80px;
+            border: 6px solid rgba(255, 255, 255, 0.2);
+            border-top-color: var(--white);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 30px;
+        }
+
+        .loader-text {
+            font-size: 24px;
+            color: var(--white);
+            font-weight: 700;
+            text-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ==================== HEADER ==================== */
+        header {
+            background: var(--white);
+            padding: 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 30px rgba(0, 102, 204, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        header.scrolled {
+            box-shadow: 0 5px 40px rgba(0, 102, 204, 0.2);
+        }
+
+        .top-info-bar {
+            background: var(--gradient-blue);
+            padding: 15px 0;
+            color: var(--white);
+        }
+
+        .top-info-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .info-item i {
+            font-size: 18px;
+            animation: iconBounce 2s ease-in-out infinite;
+        }
+
+        @keyframes iconBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .info-item a {
+            color: var(--white);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .info-item a:hover {
+            opacity: 0.8;
+        }
+
+        .main-header {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 25px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-section {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .brand-logo {
+            position: relative;
+        }
+
+        .brand-logo img {
+            height: 80px;
+            width: auto;
+            transition: transform 0.4s ease;
+            filter: drop-shadow(0 5px 15px rgba(0, 102, 204, 0.2));
+        }
+
+        .brand-logo:hover img {
+            transform: scale(1.08) rotate(2deg);
+        }
+
+        .brand-text h1 {
+            font-size: 28px;
+            background: var(--gradient-blue);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .brand-text p {
+            font-size: 14px;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .main-navigation {
+            display: flex;
+            gap: 50px;
+            list-style: none;
+        }
+
+        .main-navigation a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 18px;
+            font-weight: 700;
+            position: relative;
+            transition: color 0.3s ease;
+            padding: 8px 0;
+        }
+
+        .main-navigation a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 3px;
+            background: var(--gradient-blue);
+            transition: width 0.3s ease;
+            border-radius: 3px;
+        }
+
+        .main-navigation a:hover {
+            color: var(--primary-blue);
+        }
+
+        .main-navigation a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 32px;
+            cursor: pointer;
+            color: var(--primary-blue);
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-menu-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* ==================== HERO SECTION ==================== */
+        .hero-section {
+            margin-top: 160px;
+            min-height: 100vh;
+            background: var(--gradient-dark);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding: 100px 40px;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1600') center/cover;
+            opacity: 0.08;
+            z-index: 0;
+        }
+
+        .hero-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(0, 102, 204, 0.1);
+            animation: floatShape 20s ease-in-out infinite;
+        }
+
+        .shape-1 {
+            width: 400px;
+            height: 400px;
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            width: 300px;
+            height: 300px;
+            bottom: 15%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        .shape-3 {
+            width: 200px;
+            height: 200px;
+            top: 50%;
+            right: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes floatShape {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(120deg); }
+            66% { transform: translate(-20px, 20px) rotate(240deg); }
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 100px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text h2 {
+            font-size: 62px;
+            color: var(--white);
+            margin-bottom: 30px;
+            font-weight: 900;
+            line-height: 1.2;
+            animation: slideInRight 1s ease;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-text .highlight {
+            background: var(--gradient-blue);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+        }
+
+        .hero-text p {
+            font-size: 22px;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 25px;
+            line-height: 1.9;
+            animation: slideInRight 1s ease 0.2s both;
+        }
+
+        .hero-highlights {
+            display: grid;
+            gap: 20px;
+            margin: 40px 0;
+            animation: slideInRight 1s ease 0.4s both;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            color: var(--white);
+            font-size: 18px;
+            font-weight: 600;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .highlight-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(-10px);
+        }
+
+        .highlight-item i {
+            font-size: 28px;
+            color: var(--secondary-blue);
+            min-width: 28px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+            animation: slideInRight 1s ease 0.6s both;
+        }
+
+        .action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px 45px;
+            font-size: 19px;
+            font-weight: 700;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .action-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .action-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .action-btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-primary {
+            background: var(--gradient-blue);
+            color: var(--white);
+            box-shadow: 0 10px 30px rgba(0, 102, 204, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 102, 204, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 3px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary-blue);
+        }
+
+        .hero-visual {
+            position: relative;
+            animation: slideInLeft 1s ease;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-main-image {
+            width: 100%;
+            height: 600px;
+            border-radius: 30px;
+            object-fit: cover;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+            border: 6px solid rgba(0, 128, 255, 0.3);
+            transition: transform 0.5s ease;
+        }
+
+        .hero-main-image:hover {
+            transform: scale(1.02);
+        }
+
+        .info-badge {
+            position: absolute;
+            background: var(--white);
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+            animation: floatBadge 4s ease-in-out infinite;
+        }
+
+        @keyframes floatBadge {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-25px); }
+        }
+
+        .badge-1 {
+            top: 60px;
+            right: -40px;
+        }
+
+        .badge-2 {
+            bottom: 60px;
+            left: -40px;
+        }
+
+        .info-badge i {
+            font-size: 38px;
+            color: var(--primary-blue);
+            margin-bottom: 12px;
+        }
+
+        .info-badge h4 {
+            font-size: 20px;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            font-weight: 800;
+        }
+
+        .info-badge p {
+            font-size: 15px;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        /* ==================== FEATURES SECTION ==================== */
+        .features-section {
+            padding: 120px 40px;
+            background: var(--light-bg);
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .section-header h2 {
+            font-size: 50px;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            font-weight: 900;
+        }
+
+        .section-header .highlight {
+            background: var(--gradient-blue);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-header p {
+            font-size: 20px;
+            color: var(--text-light);
+            max-width: 750px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .features-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 45px;
+        }
+
+        .feature-item {
+            background: var(--white);
+            padding: 50px 40px;
+            border-radius: 30px;
+            text-align: center;
+            transition: all 0.5s ease;
+            border: 3px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 6px;
+            background: var(--gradient-blue);
+            transition: left 0.5s ease;
+        }
+
+        .feature-item:hover::before {
+            left: 0;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 60px rgba(0, 102, 204, 0.25);
+            border-color: var(--primary-blue);
+        }
+
+        .feature-icon-wrapper {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 30px;
+            background: var(--gradient-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 45px;
+            color: var(--white);
+            transition: all 0.5s ease;
+            position: relative;
+        }
+
+        .feature-icon-wrapper::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 3px solid var(--primary-blue);
+            animation: pulse-ring 2s ease-out infinite;
+        }
+
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        .feature-item:hover .feature-icon-wrapper {
+            transform: rotateY(360deg);
+        }
+
+        .feature-item h3 {
+            font-size: 26px;
+            color: var(--text-dark);
+            margin-bottom: 18px;
+            font-weight: 800;
+        }
+
+        .feature-item p {
+            font-size: 17px;
+            color: var(--text-light);
+            line-height: 1.9;
+        }
+
+        /* ==================== PRODUCTS SECTION ==================== */
+        .products-section {
+            padding: 120px 40px;
+            background: var(--white);
+        }
+
+        .products-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .products-categories {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 70px;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            padding: 18px 40px;
+            background: var(--light-bg);
+            border: 3px solid transparent;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-blue);
+            transition: left 0.4s ease;
+            z-index: 0;
+        }
+
+        .category-btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .category-btn:hover::before,
+        .category-btn.active::before {
+            left: 0;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            color: var(--white);
+            border-color: var(--primary-blue);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 102, 204, 0.3);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .product-item {
+            background: var(--white);
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s ease;
+            border: 3px solid transparent;
+        }
+
+        .product-item:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            border-color: var(--primary-blue);
+        }
+
+        .product-image-container {
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .product-item:hover .product-image {
+            transform: scale(1.15);
+        }
+
+        .product-label {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            background: var(--gradient-blue);
+            color: var(--white);
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 700;
+            box-shadow: 0 5px 20px rgba(0, 102, 204, 0.4);
+        }
+
+        .product-details {
+            padding: 35px;
+        }
+
+        .product-category {
+            display: inline-block;
+            background: rgba(0, 102, 204, 0.1);
+            color: var(--primary-blue);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .product-details h3 {
+            font-size: 24px;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .product-details p {
+            font-size: 16px;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .product-tags {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .product-tag {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .product-tag i {
+            color: var(--primary-blue);
+            font-size: 16px;
+        }
+
+        /* ==================== ABOUT SECTION ==================== */
+        .about-section {
+            padding: 120px 40px;
+            background: var(--gradient-dark);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600') center/cover;
+            opacity: 0.06;
+        }
+
+        .about-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-images {
+            position: relative;
+        }
+
+        .about-main-image {
+            width: 100%;
+            height: 550px;
+            border-radius: 35px;
+            object-fit: cover;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+            border: 6px solid rgba(0, 128, 255, 0.3);
+        }
+
+        .about-small-image {
+            position: absolute;
+            bottom: -40px;
+            right: -40px;
+            width: 280px;
+            height: 280px;
+            border-radius: 25px;
+            object-fit: cover;
+            border: 6px solid var(--white);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .about-text h2 {
+            font-size: 50px;
+            color: var(--white);
+            margin-bottom: 30px;
+            font-weight: 900;
+            line-height: 1.3;
+        }
+
+        .about-text .highlight {
+            background: var(--gradient-blue);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-text p {
+            font-size: 19px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 25px;
+            line-height: 2;
+        }
+
+        .about-statistics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            padding: 30px;
+            border-radius: 25px;
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .stat-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-8px);
+        }
+
+        .stat-value {
+            font-size: 48px;
+            font-weight: 900;
+            background: var(--gradient-blue);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .stat-description {
+            font-size: 17px;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 700;
+        }
+
+        /* ==================== SERVICES SECTION ==================== */
+        .services-section {
+            padding: 120px 40px;
+            background: var(--light-bg);
+        }
+
+        .services-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 40px;
+        }
+
+        .service-item {
+            background: var(--white);
+            padding: 50px 40px;
+            border-radius: 30px;
+            transition: all 0.5s ease;
+            border: 3px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-item::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 102, 204, 0.05) 0%, transparent 70%);
+            transition: all 0.6s ease;
+            transform: scale(0);
+        }
+
+        .service-item:hover::after {
+            transform: scale(1);
+        }
+
+        .service-item:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            border-color: var(--primary-blue);
+        }
+
+        .service-header {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-icon {
+            width: 90px;
+            height: 90px;
+            background: var(--gradient-blue);
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: var(--white);
+            flex-shrink: 0;
+            transition: all 0.4s ease;
+        }
+
+        .service-item:hover .service-icon {
+            transform: rotate(360deg);
+        }
+
+        .service-item h3 {
+            font-size: 26px;
+            color: var(--text-dark);
+            font-weight: 800;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-item p {
+            font-size: 17px;
+            color: var(--text-light);
+            line-height: 1.9;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-features {
+            list-style: none;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-features li {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 12px 0;
+            font-size: 16px;
+            color: var(--text-dark);
+            font-weight: 600;
+            border-bottom: 1px solid rgba(0, 102, 204, 0.1);
+        }
+
+        .service-features li:last-child {
+            border-bottom: none;
+        }
+
+        .service-features li i {
+            color: var(--primary-blue);
+            font-size: 20px;
+            min-width: 20px;
+        }
+
+        /* ==================== TESTIMONIALS SECTION ==================== */
+        .testimonials-section {
+            padding: 120px 40px;
+            background: var(--white);
+        }
+
+        .testimonials-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 40px;
+        }
+
+        .testimonial-item {
+            background: var(--light-bg);
+            padding: 45px;
+            border-radius: 30px;
+            position: relative;
+            transition: all 0.5s ease;
+            border: 3px solid transparent;
+        }
+
+        .testimonial-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+            border-color: var(--primary-blue);
+        }
+
+        .quote-icon {
+            font-size: 60px;
+            color: var(--primary-blue);
+            opacity: 0.2;
+            position: absolute;
+            top: 30px;
+            right: 40px;
+        }
+
+        .testimonial-content {
+            font-size: 18px;
+            color: var(--text-dark);
+            line-height: 1.9;
+            margin-bottom: 30px;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .author-image {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: var(--gradient-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: var(--white);
+            font-weight: 800;
+            border: 4px solid var(--white);
+            box-shadow: 0 5px 20px rgba(0, 102, 204, 0.3);
+        }
+
+        .author-details h4 {
+            font-size: 20px;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            font-weight: 800;
+        }
+
+        .author-details p {
+            font-size: 15px;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .testimonial-rating {
+            display: flex;
+            gap: 6px;
+            margin-top: 10px;
+        }
+
+        .testimonial-rating i {
+            color: #FFB800;
+            font-size: 16px;
+        }
+
+        /* ==================== CONTACT SECTION ==================== */
+        .contact-section {
+            padding: 120px 40px;
+            background: var(--gradient-dark);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1600') center/cover;
+            opacity: 0.05;
+        }
+
+        .contact-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-intro {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .contact-intro h2 {
+            font-size: 50px;
+            color: var(--white);
+            margin-bottom: 25px;
+            font-weight: 900;
+        }
+
+        .contact-intro .highlight {
+            background: var(--gradient-blue);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .contact-intro p {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            padding: 50px 40px;
+            border-radius: 30px;
+            text-align: center;
+            border: 3px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.5s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-12px);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: var(--primary-blue);
+        }
+
+        .contact-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 30px;
+            background: var(--gradient-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 45px;
+            color: var(--white);
+            transition: all 0.4s ease;
+        }
+
+        .contact-item:hover .contact-icon {
+            transform: scale(1.1) rotate(360deg);
+        }
+
+        .contact-item h3 {
+            font-size: 26px;
+            color: var(--white);
+            margin-bottom: 18px;
+            font-weight: 800;
+        }
+
+        .contact-item p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.8;
+        }
+
+        .contact-item a {
+            color: var(--secondary-blue);
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--white);
+            text-decoration: underline;
+        }
+
+        /* ==================== MAP SECTION ==================== */
+        .map-section {
+            padding: 0;
+            background: var(--light-bg);
+        }
+
+        .map-wrapper {
+            width: 100%;
+            height: 550px;
+            position: relative;
+        }
+
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: grayscale(30%);
+        }
+
+        /* ==================== FOOTER ==================== */
+        footer {
+            background: var(--dark-bg);
+            color: rgba(255, 255, 255, 0.85);
+            padding: 90px 40px 40px;
+        }
+
+        .footer-main {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-column h3 {
+            font-size: 24px;
+            color: var(--white);
+            margin-bottom: 30px;
+            font-weight: 800;
+            position: relative;
+            padding-bottom: 18px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 70px;
+            height: 4px;
+            background: var(--gradient-blue);
+            border-radius: 2px;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .footer-logo-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-logo-section img {
+            height: 80px;
+            width: auto;
+        }
+
+        .footer-brand-name {
+            font-size: 26px;
+            color: var(--white);
+            font-weight: 900;
+            background: var(--gradient-blue);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-column p {
+            font-size: 17px;
+            line-height: 1.9;
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .footer-links-list {
+            list-style: none;
+        }
+
+        .footer-links-list li {
+            margin-bottom: 18px;
+        }
+
+        .footer-links-list a {
+            color: rgba(255, 255, 255, 0.75);
+            text-decoration: none;
+            font-size: 17px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links-list a:hover {
+            color: var(--secondary-blue);
+            padding-right: 12px;
+        }
+
+        .footer-links-list a i {
+            color: var(--primary-blue);
+            font-size: 16px;
+        }
+
+        .social-media {
+            display: flex;
+            gap: 18px;
+            margin-top: 30px;
+        }
+
+        .social-media a {
+            width: 55px;
+            height: 55px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 22px;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+        }
+
+        .social-media a:hover {
+            background: var(--gradient-blue);
+            transform: translateY(-8px);
+            border-color: var(--secondary-blue);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 40px;
+            border-top: 2px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            font-size: 17px;
+            color: rgba(255, 255, 255, 0.65);
+        }
+
+        /* ==================== WHATSAPP BUTTON ==================== */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 35px;
+            left: 35px;
+            z-index: 999;
+        }
+
+        .whatsapp-button a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 70px;
+            height: 70px;
+            background: #25D366;
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 38px;
+            text-decoration: none;
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
+            transition: all 0.4s ease;
+            animation: whatsappPulse 2s infinite;
+        }
+
+        @keyframes whatsappPulse {
+            0%, 100% {
+                box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
+            }
+            50% {
+                box-shadow: 0 8px 40px rgba(37, 211, 102, 0.8);
+            }
+        }
+
+        .whatsapp-button a:hover {
+            transform: scale(1.2);
+            box-shadow: 0 10px 40px rgba(37, 211, 102, 0.7);
+        }
+
+        /* ==================== SCROLL TO TOP ==================== */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 35px;
+            right: 35px;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 24px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+            z-index: 999;
+            box-shadow: 0 8px 25px rgba(0, 102, 204, 0.4);
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 35px rgba(0, 102, 204, 0.6);
+        }
+
+        /* ==================== ANIMATIONS ==================== */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 1200px) {
+            .hero-container,
+            .about-wrapper {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .hero-visual,
+            .about-images {
+                order: -1;
+            }
+
+            .info-badge {
+                display: none;
+            }
+        }
+
+        @media (max-width: 968px) {
+            .top-info-content {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .main-header {
+                padding: 20px 30px;
+            }
+
+            .main-navigation {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 85%;
+                max-width: 380px;
+                height: 100vh;
+                height: -webkit-fill-available;
+                background: var(--white);
+                flex-direction: column;
+                gap: 0;
+                padding: 120px 35px 35px;
+                box-shadow: -8px 0 25px rgba(0, 0, 0, 0.15);
+                transition: right 0.5s ease;
+                z-index: 999;
+                overflow-y: auto;
+            }
+
+            .main-navigation.active {
+                right: 0;
+            }
+
+            .main-navigation li {
+                width: 100%;
+                padding: 25px 0;
+                border-bottom: 2px solid var(--light-bg);
+            }
+
+            .main-navigation a {
+                font-size: 20px;
+                display: block;
+            }
+
+            .main-navigation a::after {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-section {
+                margin-top: 180px;
+                padding: 80px 30px;
+            }
+
+            .hero-text h2 {
+                font-size: 42px;
+            }
+
+            .hero-text p {
+                font-size: 19px;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+            }
+
+            .action-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .section-header h2 {
+                font-size: 38px;
+            }
+
+            .about-text h2,
+            .contact-intro h2 {
+                font-size: 38px;
+            }
+
+            .about-small-image {
+                width: 220px;
+                height: 220px;
+                bottom: -30px;
+                right: -30px;
+            }
+
+            .features-section,
+            .products-section,
+            .services-section,
+            .testimonials-section,
+            .contact-section {
+                padding: 90px 30px;
+            }
+
+            .about-section {
+                padding: 90px 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .brand-logo img {
+                height: 60px;
+            }
+
+            .brand-text h1 {
+                font-size: 22px;
+            }
+
+            .brand-text p {
+                font-size: 12px;
+            }
+
+            .hero-text h2 {
+                font-size: 36px;
+            }
+
+            .hero-text p {
+                font-size: 17px;
+            }
+
+            .highlight-item {
+                font-size: 16px;
+            }
+
+            .section-header h2 {
+                font-size: 32px;
+            }
+
+            .section-header p {
+                font-size: 17px;
+            }
+
+            .features-grid,
+            .products-grid,
+            .services-grid,
+            .testimonials-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .stat-value {
+                font-size: 42px;
+            }
+
+            .map-wrapper {
+                height: 400px;
+            }
+
+            .whatsapp-button {
+                bottom: 25px;
+                left: 25px;
+            }
+
+            .whatsapp-button a {
+                width: 62px;
+                height: 62px;
+                font-size: 34px;
+            }
+
+            .scroll-to-top {
+                bottom: 100px;
+                right: 25px;
+                width: 55px;
+                height: 55px;
+                font-size: 22px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .top-info-bar {
+                padding: 12px 0;
+            }
+
+            .top-info-content {
+                padding: 0 25px;
+                font-size: 13px;
+            }
+
+            .brand-logo img {
+                height: 50px;
+            }
+
+            .brand-text h1 {
+                font-size: 18px;
+            }
+
+            .brand-text p {
+                font-size: 11px;
+            }
+
+            .hero-text h2 {
+                font-size: 30px;
+            }
+
+            .section-header h2 {
+                font-size: 28px;
+            }
+
+            .action-btn {
+                padding: 18px 35px;
+                font-size: 17px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <div class="loader-text">جاري التحميل...</div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Button -->
+    <div class="whatsapp-button">
+        <a href="https://wa.me/218945659872" target="_blank" title="تواصل معنا عبر واتساب">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-to-top" id="scrollTopBtn">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+       
+        <nav class="main-header">
+            <div class="brand-section">
+                <div class="brand-logo">
+                    <img src="logo.png" alt="شركة البرق الأول المتجدد">
+                </div>
+                <div class="brand-text">
+                    <h1>شركة البرق الأول المتجدد</h1>
+                    <p>لاستيراد وسائل النقل ومستلزماتها</p>
+                </div>
+            </div>
+            <ul class="main-navigation" id="mainNav">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#about">من نحن</a></li>
+                <li><a href="#services">الخدمات</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
+            </ul>
+            <div class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="hero-background"></div>
+        <div class="hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-text">
+                <h2>مرحباً بكم في <span class="highlight">البرق الأول المتجدد</span></h2>
+                <p>شريكك الموثوق في استيراد وتوزيع أفضل وسائل النقل ومستلزماتها في ليبيا</p>
+                <p>نقدم لكم مجموعة واسعة من المركبات والقطع والإكسسوارات عالية الجودة بأسعار تنافسية تلبي جميع احتياجاتكم</p>
+
+                <div class="hero-highlights">
+                    <div class="highlight-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>مركبات أصلية 100% من أفضل الشركات العالمية</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>أسعار تنافسية وعروض خاصة مستمرة</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>خدمة توصيل سريعة لجميع أنحاء ليبيا</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>دعم فني متميز على مدار الساعة</span>
+                    </div>
+                </div>
+
+                <div class="hero-actions">
+                    <a href="#services" class="action-btn btn-primary">
+                        <span><i class="fas fa-car"></i> تصفح الخدمات</span>
+                    </a>
+                    <a href="#contact" class="action-btn btn-secondary">
+                        <span><i class="fas fa-phone-alt"></i> تواصل معنا</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800" alt="وسائل النقل" class="hero-main-image">
+                <div class="info-badge badge-1">
+                    <i class="fas fa-award"></i>
+                    <h4>جودة عالية</h4>
+                    <p>منتجات مضمونة</p>
+                </div>
+                <div class="info-badge badge-2">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h4>توصيل سريع</h4>
+                    <p>خدمة 24/7</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="features-wrapper">
+            <div class="section-header">
+                <h2>لماذا <span class="highlight">البرق الأول المتجدد</span>؟</h2>
+                <p>نحن نقدم أفضل الحلول والخدمات المتكاملة لعملائنا الكرام</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-item animate-on-scroll">
+                    <div class="feature-icon-wrapper">
+                        <i class="fas fa-car-side"></i>
+                    </div>
+                    <h3>مركبات عالية الجودة</h3>
+                    <p>نستورد مركباتنا من أفضل الشركات العالمية المعتمدة لضمان أعلى معايير الجودة والأمان والأداء المتميز</p>
+                </div>
+
+                <div class="feature-item animate-on-scroll">
+                    <div class="feature-icon-wrapper">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>أسعار تنافسية</h3>
+                    <p>نوفر أفضل الأسعار في السوق الليبي مع عروض وخصومات مستمرة على مختلف المنتجات والخدمات</p>
+                </div>
+
+                <div class="feature-item animate-on-scroll">
+                    <div class="feature-icon-wrapper">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>توصيل سريع وآمن</h3>
+                    <p>خدمة توصيل احترافية لجميع المدن الليبية مع ضمان وصول المركبات والمنتجات بحالة ممتازة</p>
+                </div>
+
+                <div class="feature-item animate-on-scroll">
+                    <div class="feature-icon-wrapper">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>دعم فني متميز</h3>
+                    <p>فريق دعم متخصص متاح على مدار الساعة للإجابة على استفساراتكم وتقديم المساعدة الفنية</p>
+                </div>
+
+                <div class="feature-item animate-on-scroll">
+                    <div class="feature-icon-wrapper">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>ضمان الجودة</h3>
+                    <p>جميع منتجاتنا مضمونة وأصلية 100% مع إمكانية الاستبدال والإرجاع خلال فترة محددة</p>
+                </div>
+
+                <div class="feature-item animate-on-scroll">
+                    <div class="feature-icon-wrapper">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>خبرة واسعة</h3>
+                    <p>سنوات من الخبرة في مجال الاستيراد والتوزيع مع قاعدة عملاء راضية ومتنامية</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="about-background"></div>
+        <div class="about-wrapper">
+            <div class="about-images animate-on-scroll">
+                <img src="https://symlog.eu/wp-content/uploads/2025/02/profesjonalny-transport.jpeg" alt="عن الشركة" class="about-main-image">
+                <img src="https://innoter.com/upload/medialibrary/e62/logistics-1.png" alt="منتجاتنا" class="about-small-image">
+            </div>
+
+            <div class="about-text animate-on-scroll">
+                <h2>من نحن - <span class="highlight">البرق الأول المتجدد</span></h2>
+                <p>
+                    شركة البرق الأول المتجدد هي إحدى الشركات الرائدة في ليبيا في مجال استيراد وتوزيع وسائل النقل ومستلزماتها. نفخر بتقديم منتجات عالية الجودة من أفضل الشركات العالمية المعتمدة.
+                </p>
+                <p>
+                    نسعى دائماً لتلبية احتياجات عملائنا من خلال توفير أحدث المركبات والتقنيات، مع الحفاظ على أعلى معايير الجودة والخدمة المتميزة. فريقنا المتخصص يعمل بجد لضمان رضا عملائنا الكرام.
+                </p>
+                <p>
+                    نؤمن بأن النجاح يأتي من خلال بناء علاقات طويلة الأمد مع عملائنا، ولذلك نحرص على تقديم أفضل الأسعار والعروض الحصرية مع خدمة عملاء متميزة على مدار الساعة.
+                </p>
+
+                <div class="about-statistics">
+                    <div class="stat-item">
+                        <div class="stat-value">3000+</div>
+                        <div class="stat-description">عميل راضٍ</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">1500+</div>
+                        <div class="stat-description">مركبة مباعة</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">15+</div>
+                        <div class="stat-description">سنة خبرة</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">24/7</div>
+                        <div class="stat-description">خدمة مستمرة</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="services-wrapper">
+            <div class="section-header">
+                <h2>خدماتنا <span class="highlight">المتميزة</span></h2>
+                <p>نقدم مجموعة شاملة من الخدمات لضمان راحة وسعادة عملائنا</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-item animate-on-scroll">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <h3>التوصيل السريع</h3>
+                    </div>
+                    <p>خدمة توصيل سريعة وآمنة لجميع أنحاء ليبيا مع فريق محترف ومتخصص يضمن وصول مركبتك في الوقت المحدد وبحالة ممتازة</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> توصيل لجميع المدن الليبية</li>
+                        <li><i class="fas fa-check-circle"></i> توصيل لجميع المدن الليبية</li>
+                        <li><i class="fas fa-check-circle"></i> تتبع الشحنة أونلاين</li>
+                        <li><i class="fas fa-check-circle"></i> تأمين شامل على المركبات</li>
+                    </ul>
+                </div>
+
+                <div class="service-item animate-on-scroll">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>طلبات الجملة</h3>
+                    </div>
+                    <p>نوفر خدمة طلبات الجملة للمحلات التجارية والشركات بأسعار خاصة وعروض حصرية مع إمكانية التوصيل المجاني للكميات الكبيرة</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> أسعار خاصة للجملة</li>
+                        <li><i class="fas fa-check-circle"></i> خصومات على الكميات</li>
+                        <li><i class="fas fa-check-circle"></i> شروط دفع مرنة</li>
+                    </ul>
+                </div>
+
+                <div class="service-item animate-on-scroll">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>صيانة وخدمات</h3>
+                    </div>
+                    <p>خدمات صيانة شاملة لجميع أنواع المركبات مع فريق فني متخصص وقطع غيار أصلية لضمان أفضل أداء لمركبتك</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> صيانة دورية شاملة</li>
+                        <li><i class="fas fa-check-circle"></i> فحص مجاني</li>
+                        <li><i class="fas fa-check-circle"></i> ضمان على الصيانة</li>
+                    </ul>
+                </div>
+
+                <div class="service-item animate-on-scroll">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>دعم فني 24/7</h3>
+                    </div>
+                    <p>فريق دعم فني متخصص متاح على مدار الساعة للإجابة على استفساراتكم وتقديم المساعدة الفنية والمشورة حول المنتجات المناسبة</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> رد سريع على الاستفسارات</li>
+                        <li><i class="fas fa-check-circle"></i> استشارات مجانية</li>
+                        <li><i class="fas fa-check-circle"></i> متابعة ما بعد البيع</li>
+                    </ul>
+                </div>
+
+                <div class="service-item animate-on-scroll">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-undo-alt"></i>
+                        </div>
+                        <h3>الاستبدال والإرجاع</h3>
+                    </div>
+                    <p>سياسة استبدال وإرجاع مرنة وسهلة لضمان رضا عملائنا الكرام مع إمكانية استرجاع المبلغ أو استبدال المنتج خلال فترة محددة</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> إرجاع خلال 14 يوم</li>
+                        <li><i class="fas fa-check-circle"></i> استبدال مجاني</li>
+                        <li><i class="fas fa-check-circle"></i> استرجاع كامل المبلغ</li>
+                    </ul>
+                </div>
+
+                <div class="service-item animate-on-scroll">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3>ضمان الجودة</h3>
+                    </div>
+                    <p>جميع منتجاتنا أصلية ومضمونة 100% من مصادر موثوقة مع شهادات جودة معتمدة وضمان على جميع المنتجات والخدمات</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> منتجات أصلية 100%</li>
+                        <li><i class="fas fa-check-circle"></i> شهادات جودة معتمدة</li>
+                        <li><i class="fas fa-check-circle"></i> ضمان الشركة المصنعة</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="testimonials-wrapper">
+            <div class="section-header">
+                <h2>آراء <span class="highlight">عملائنا</span></h2>
+                <p>نفخر بثقة عملائنا وتقييماتهم الإيجابية لخدماتنا ومنتجاتنا</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-item animate-on-scroll">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <p class="testimonial-content">
+                        "تعاملت مع شركة البرق الأول المتجدد عدة مرات وكانت التجربة رائعة في كل مرة. المركبات ذات جودة عالية والأسعار ممتازة. التوصيل سريع والخدمة احترافية جداً. أنصح الجميع بالتعامل معهم."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-image">م</div>
+                        <div class="author-details">
+                            <h4>محمد الزروق</h4>
+                            <p>صاحب شركة نقل</p>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-item animate-on-scroll">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <p class="testimonial-content">
+                        "أفضل شركة للحصول على المركبات في ليبيا. المنتجات أصلية والأسعار تنافسية جداً. فريق العمل متعاون ويقدم استشارات مفيدة. سعيد جداً بالتعامل معهم وسأستمر في ذلك."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-image">أ</div>
+                        <div class="author-details">
+                            <h4>أحمد السنوسي</h4>
+                            <p>رجل أعمال</p>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-item animate-on-scroll">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <p class="testimonial-content">
+                        "شركة موثوقة ومحترمة. طلبت كمية كبيرة من المركبات لمشروعي وكانت الأسعار ممتازة والجودة فوق التوقعات. التوصيل كان في الموعد المحدد. شكراً للبرق الأول المتجدد."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-image">ف</div>
+                        <div class="author-details">
+                            <h4>فاطمة المهدي</h4>
+                            <p>مديرة مشروع</p>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-background"></div>
+        <div class="contact-wrapper">
+            <div class="contact-intro">
+                <h2>تواصل <span class="highlight">معنا</span></h2>
+                <p>نحن هنا للإجابة على جميع استفساراتكم وخدمتكم على مدار الساعة</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-item animate-on-scroll">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>اتصل بنا</h3>
+                    <p>
+                        <a href="tel:+218945659872">0945659872</a>
+                    </p>
+                    <p>متاح 24/7 للرد على استفساراتكم</p>
+                </div>
+
+                <div class="contact-item animate-on-scroll">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>البريد الإلكتروني</h3>
+                    <p>
+                        <a href="mailto:info@elbarq.ly">info@elbarq.ly</a>
+                    </p>
+                    <p>راسلنا وسنرد عليك في أقرب وقت</p>
+                </div>
+
+                <div class="contact-item animate-on-scroll">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>الموقع</h3>
+                    <p>ليبيا - طرابلس</p>
+                    <p>نخدم جميع المدن الليبية</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="map-wrapper">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3366.1104657212!2d14.567293!3d32.469737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzLCsDI4JzExLjEiTiAxNMKwMzQnMDIuMyJF!5e0!3m2!1sar!2sus!4v1765734882926!5m2!1sar!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-main">
+            <div class="footer-column footer-brand">
+                <div class="footer-logo-section">
+                    <img src="logo.png" alt="شركة البرق الأول المتجدد">
+                    <div class="footer-brand-name">البرق الأول المتجدد</div>
+                </div>
+                <p>شركة رائدة في مجال استيراد وتوزيع وسائل النقل ومستلزماتها في ليبيا. نقدم منتجات عالية الجودة بأسعار تنافسية مع خدمة متميزة.</p>
+                <div class="social-media">
+                    <a href="https://www.facebook.com/" target="_blank" title="فيسبوك">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://wa.me/218945659872" target="_blank" title="واتساب">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.instagram.com/" target="_blank" title="انستغرام">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>روابط سريعة</h3>
+                <ul class="footer-links-list">
+                    <li><a href="#home"><i class="fas fa-chevron-left"></i> الرئيسية</a></li>
+                    <li><a href="#about"><i class="fas fa-chevron-left"></i> من نحن</a></li>
+                    <li><a href="#services"><i class="fas fa-chevron-left"></i> الخدمات</a></li>
+                    <li><a href="#contact"><i class="fas fa-chevron-left"></i> اتصل بنا</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>معلومات الاتصال</h3>
+                <ul class="footer-links-list">
+                    <li>
+                        <a href="tel:+218945659872">
+                            <i class="fas fa-phone"></i> 0945659872
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:info@elbarq.ly">
+                            <i class="fas fa-envelope"></i> info@elbarq.ly
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-map-marker-alt"></i> ليبيا - طرابلس
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-clock"></i> متاح 24/7
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 شركة البرق الأول المتجدد. جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
+
+    <script>
+        // ==================== LOADER ====================
+        document.addEventListener('DOMContentLoaded', function() {
+            if (document.fonts) {
+                document.fonts.ready.then(function() {
+                    setTimeout(function() {
+                        document.getElementById('loader').classList.add('hidden');
+                    }, 700);
+                });
+            } else {
+                setTimeout(function() {
+                    document.getElementById('loader').classList.add('hidden');
+                }, 1400);
+            }
+        });
+
+        window.addEventListener('load', function() {
+            document.getElementById('loader').classList.add('hidden');
+        });
+
+        // ==================== MOBILE MENU ====================
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+
+        mobileMenuBtn.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+            const icon = this.querySelector('i');
+            if (mainNav.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.main-navigation a').forEach(link => {
+            link.addEventListener('click', function() {
+                mainNav.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInsideNav = mainNav.contains(event.target);
+            const isClickOnToggle = mobileMenuBtn.contains(event.target);
+
+            if (!isClickInsideNav && !isClickOnToggle && mainNav.classList.contains('active')) {
+                mainNav.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // ==================== HEADER SCROLL ====================
+        const header = document.getElementById('header');
+        let lastScrollPosition = 0;
+
+        window.addEventListener('scroll', function() {
+            const currentScrollPosition = window.pageYOffset;
+
+            if (currentScrollPosition > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            lastScrollPosition = currentScrollPosition;
+        });
+
+        // ==================== SCROLL TO TOP ====================
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 500) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // ==================== SMOOTH SCROLLING ====================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = header.offsetHeight;
+                    const targetPosition = target.offsetTop - headerHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // ==================== ANIMATE ON SCROLL ====================
+        const animateElements = document.querySelectorAll('.animate-on-scroll');
+
+        const animateObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -100px 0px'
+        });
+
+        animateElements.forEach(element => {
+            animateObserver.observe(element);
+        });
+
+        // ==================== COUNTER ANIMATION ====================
+        const statValues = document.querySelectorAll('.stat-value');
+        let hasCounterAnimated = false;
+
+        const animateCounter = (element) => {
+            const text = element.textContent;
+            const target = parseInt(text.replace(/\D/g, ''));
+            const suffix = text.replace(/[0-9]/g, '');
+            const duration = 2800;
+            const increment = target / (duration / 16);
+            let current = 0;
+
+            const updateCounter = () => {
+                current += increment;
+                if (current < target) {
+                    element.textContent = Math.floor(current) + suffix;
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.textContent = target + suffix;
+                }
+            };
+
+            updateCounter();
+        };
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !hasCounterAnimated) {
+                    hasCounterAnimated = true;
+                    statValues.forEach(stat => {
+                        animateCounter(stat);
+                    });
+                }
+            });
+        }, {
+            threshold: 0.5
+        });
+
+        const aboutSection = document.querySelector('.about-section');
+        if (aboutSection) {
+            counterObserver.observe(aboutSection);
+        }
+
+        // ==================== PRODUCTS CATEGORIES ====================
+        const categoryBtns = document.querySelectorAll('.category-btn');
+
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                // Add animation effect
+                const productsGrid = document.querySelector('.products-grid');
+                productsGrid.style.opacity = '0';
+                productsGrid.style.transform = 'translateY(30px)';
+
+                setTimeout(() => {
+                    productsGrid.style.opacity = '1';
+                    productsGrid.style.transform = 'translateY(0)';
+                }, 350);
+            });
+        });
+
+        // ==================== IMAGE LOADING ====================
+        document.querySelectorAll('img').forEach(img => {
+            img.style.transition = 'opacity 0.7s ease';
+
+            if (img.complete && img.naturalHeight !== 0) {
+                img.style.opacity = '1';
+            } else {
+                img.style.opacity = '0';
+                img.addEventListener('load', function() {
+                    this.style.opacity = '1';
+                });
+
+                setTimeout(() => {
+                    img.style.opacity = '1';
+                }, 2500);
+            }
+
+            img.addEventListener('error', function() {
+                this.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect fill="%23e8e8e8" width="400" height="300"/%3E%3Ctext fill="%23999" x="50%25" y="50%25" text-anchor="middle" dy=".3em"%3Eالصورة غير متوفرة%3C/text%3E%3C/svg%3E';
+                this.style.objectFit = 'contain';
+                this.style.opacity = '1';
+            });
+        });
+
+        // ==================== ACTIVE NAV LINK ====================
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.main-navigation a');
+
+        window.addEventListener('scroll', () => {
+            let currentSection = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 300)) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.style.color = '';
+                if (link.getAttribute('href').slice(1) === currentSection) {
+                    link.style.color = 'var(--primary-blue)';
+                }
+            });
+        });
+
+        // ==================== PARALLAX EFFECT ====================
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.hero-shapes, .hero-background, .about-background, .contact-background');
+
+            parallaxElements.forEach(element => {
+                const speed = 0.4;
+                element.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+
+        // ==================== PRODUCT CARD HOVER EFFECT ====================
+        const productItems = document.querySelectorAll('.product-item');
+
+        productItems.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.zIndex = '10';
+            });
+
+            card.addEventListener('mouseleave', function() {
+                this.style.zIndex = '1';
+            });
+        });
+
+        // ==================== FEATURE ITEMS ANIMATION ====================
+        const featureItems = document.querySelectorAll('.feature-item');
+
+        featureItems.forEach((item, index) => {
+            item.style.animationDelay = `${index * 0.12}s`;
+        });
+
+        // ==================== SERVICE ITEMS ANIMATION ====================
+        const serviceItems = document.querySelectorAll('.service-item');
+
+        serviceItems.forEach((item, index) => {
+            item.style.animationDelay = `${index * 0.18}s`;
+        });
+
+        // ==================== TESTIMONIAL ITEMS ANIMATION ====================
+        const testimonialItems = document.querySelectorAll('.testimonial-item');
+
+        testimonialItems.forEach((item, index) => {
+            item.style.animationDelay = `${index * 0.22}s`;
+        });
+
+        // ==================== CONTACT ITEMS ANIMATION ====================
+        const contactItems = document.querySelectorAll('.contact-item');
+
+        contactItems.forEach((item, index) => {
+            item.style.animationDelay = `${index * 0.18}s`;
+        });
+
+        // ==================== INITIALIZE ALL ANIMATIONS ====================
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+
+            setTimeout(() => {
+                animateElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 200;
+
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        element.classList.add('animated');
+                    }
+                });
+            }, 150);
+        });
+
+        // ==================== PREVENT FOUC ====================
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.style.visibility = 'visible';
+            document.body.style.opacity = '1';
+        });
+
+        // ==================== LAZY LOADING FOR IMAGES ====================
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                        }
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // ==================== PERFORMANCE OPTIMIZATION ====================
+        let tickingScroll = false;
+
+        function optimizedScrollHandler() {
+            if (!tickingScroll) {
+                window.requestAnimationFrame(() => {
+                    animateElements.forEach(element => {
+                        const elementTop = element.getBoundingClientRect().top;
+                        const elementVisible = 200;
+
+                        if (elementTop < window.innerHeight - elementVisible) {
+                            element.classList.add('animated');
+                        }
+                    });
+                    tickingScroll = false;
+                });
+                tickingScroll = true;
+            }
+        }
+
+        window.addEventListener('scroll', optimizedScrollHandler);
+
+        // ==================== ACCESSIBILITY IMPROVEMENTS ====================
+        document.querySelectorAll('a, button').forEach(element => {
+            if (!element.hasAttribute('aria-label') && !element.textContent.trim()) {
+                element.setAttribute('aria-label', 'رابط');
+            }
+        });
+
+        // ==================== KEYBOARD NAVIGATION ====================
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mainNav.classList.contains('active')) {
+                mainNav.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // ==================== FOCUS TRAP FOR MOBILE MENU ====================
+        const focusableElements = mainNav.querySelectorAll('a, button');
+        const firstFocusable = focusableElements[0];
+        const lastFocusable = focusableElements[focusableElements.length - 1];
+
+        mainNav.addEventListener('keydown', function(e) {
+            if (e.key === 'Tab') {
+                if (e.shiftKey) {
+                    if (document.activeElement === firstFocusable) {
+                        e.preventDefault();
+                        lastFocusable.focus();
+                    }
+                } else {
+                    if (document.activeElement === lastFocusable) {
+                        e.preventDefault();
+                        firstFocusable.focus();
+                    }
+                }
+            }
+        });
+
+        // ==================== PRELOAD CRITICAL IMAGES ====================
+        const criticalImages = [
+            'logo.png'
+        ];
+
+        criticalImages.forEach(src => {
+            const link = document.createElement('link');
+            link.rel = 'preload';
+            link.as = 'image';
+            link.href = src;
+            document.head.appendChild(link);
+        });
+
+        // ==================== ERROR HANDLING ====================
+        window.addEventListener('error', function(e) {
+            console.error('خطأ في التطبيق:', e.error);
+        });
+
+        // ==================== ONLINE/OFFLINE STATUS ====================
+        window.addEventListener('online', function() {
+            console.log('تم الاتصال بالإنترنت');
+        });
+
+        window.addEventListener('offline', function() {
+            console.log('تم قطع الاتصال بالإنترنت');
+        });
+
+        // ==================== PAGE VISIBILITY ====================
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                console.log('الصفحة مخفية');
+            } else {
+                console.log('الصفحة مرئية');
+            }
+        });
+
+        // ==================== BUTTON RIPPLE EFFECT ====================
+        const buttons = document.querySelectorAll('.action-btn, .category-btn');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.style.position = 'absolute';
+                ripple.style.borderRadius = '50%';
+                ripple.style.background = 'rgba(255, 255, 255, 0.5)';
+                ripple.style.transform = 'scale(0)';
+                ripple.style.animation = 'ripple-effect 0.6s ease-out';
+                ripple.classList.add('ripple');
+
+                this.appendChild(ripple);
+
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+
+        // Add ripple animation CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple-effect {
+                to {
+                    transform: scale(2);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // ==================== SMOOTH REVEAL FOR SECTIONS ====================
+        const observerOptions = {
+            threshold: 0.12,
+            rootMargin: '0px 0px -120px 0px'
+        };
+
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(40px)';
+            section.style.transition = 'opacity 0.9s ease, transform 0.9s ease';
+            sectionObserver.observe(section);
+        });
+
+        // ==================== CONSOLE MESSAGE ====================
+        console.log('%c شركة البرق الأول المتجدد ', 'background: linear-gradient(135deg, #0066CC 0%, #0080FF 100%); color: white; font-size: 24px; padding: 14px; font-weight: bold;');
+        console.log('%c لاستيراد وسائل النقل ومستلزماتها ', 'background: #0A1628; color: white; font-size: 20px; padding: 12px;');
+        console.log('%c 📞 0945659872 | 📧 info@elbarq.ly ', 'background: #0066CC; color: white; font-size: 18px; padding: 10px;');
+
+        // ==================== SCROLL PROGRESS INDICATOR ====================
+        const createScrollProgress = () => {
+            const progressBar = document.createElement('div');
+            progressBar.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 0%;
+                height: 4px;
+                background: linear-gradient(135deg, #0066CC 0%, #0080FF 100%);
+                z-index: 10000;
+                transition: width 0.1s ease;
+            `;
+            document.body.appendChild(progressBar);
+
+            window.addEventListener('scroll', () => {
+                const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (window.scrollY / windowHeight) * 100;
+                progressBar.style.width = scrolled + '%';
+            });
+        };
+
+        createScrollProgress();
+
+        // ==================== INTERSECTION OBSERVER FOR ANIMATIONS ====================
+        const observeElements = () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -80px 0px'
+            });
+
+            document.querySelectorAll('.feature-item, .product-item, .service-item, .testimonial-item, .contact-item').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                observer.observe(el);
+            });
+        };
+
+        observeElements();
+
+        // ==================== DYNAMIC YEAR IN FOOTER ====================
+        const updateFooterYear = () => {
+            const yearElement = document.querySelector('.footer-bottom p');
+            if (yearElement) {
+                const currentYear = new Date().getFullYear();
+                yearElement.innerHTML = `&copy; ${currentYear} شركة البرق الأول المتجدد. جميع الحقوق محفوظة`;
+            }
+        };
+
+        updateFooterYear();
+
+        // ==================== PREVENT RIGHT CLICK ON IMAGES ====================
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('contextmenu', (e) => {
+                e.preventDefault();
+            });
+        });
+
+        // ==================== LOADING PERFORMANCE ====================
+        window.addEventListener('load', () => {
+            const loadTime = performance.now();
+            console.log(`⚡ تم تحميل الصفحة في ${Math.round(loadTime)}ms`);
+        });
+
+        // ==================== FINAL INITIALIZATION ====================
+        console.log('✅ تم تحميل الموقع بنجاح');
+        console.log('🚗 مرحباً بكم في شركة البرق الأول المتجدد');
+        console.log('📱 للتواصل: 0945659872');
+
+        // ==================== VIEWPORT HEIGHT FIX FOR MOBILE ====================
+        const setVH = () => {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        };
+
+        setVH();
+        window.addEventListener('resize', setVH);
+        window.addEventListener('orientationchange', setVH);
+
+        // ==================== TOUCH DEVICE DETECTION ====================
+        const isTouchDevice = () => {
+            return (('ontouchstart' in window) ||
+                (navigator.maxTouchPoints > 0) ||
+                (navigator.msMaxTouchPoints > 0));
+        };
+
+        if (isTouchDevice()) {
+            document.body.classList.add('touch-device');
+        }
+
+        // ==================== SMOOTH SCROLL POLYFILL ====================
+        if (!('scrollBehavior' in document.documentElement.style)) {
+            const smoothScrollPolyfill = document.createElement('script');
+            smoothScrollPolyfill.src = 'https://cdn.jsdelivr.net/npm/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js';
+            document.head.appendChild(smoothScrollPolyfill);
+        }
+
+        // ==================== FINAL CHECKS ====================
+        document.addEventListener('DOMContentLoaded', () => {
+            // Check if all critical elements are loaded
+            const criticalElements = [
+                document.getElementById('header'),
+                document.querySelector('.hero-section'),
+                document.querySelector('.features-section'),
+                document.querySelector('.products-section'),
+                document.querySelector('.about-section'),
+                document.querySelector('.services-section'),
+                document.querySelector('.contact-section'),
+                document.querySelector('footer')
+            ];
+
+            const allLoaded = criticalElements.every(el => el !== null);
+
+            if (allLoaded) {
+                console.log('✅ جميع العناصر الأساسية تم تحميلها بنجاح');
+            } else {
+                console.warn('⚠️ بعض العناصر لم يتم تحميلها');
+            }
+        });
+    </script>
+</body>
+</html>
